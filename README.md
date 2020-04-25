@@ -5,4 +5,33 @@ This image installs:
 * Metamod v1.21.1-am
 * AMX Mod X v1.8.2 (with Counter-Strike Addon)
 
-As for now, there is no documentation. See the `Dockerfile` for details.
+## Prerequisites
+
+* Docker
+
+## Running
+
+Clone this repo:
+
+```sh
+git clone git@github.com:oevseev/cstrike-server.git
+cd cstrike-server
+```
+
+Build the container:
+
+```
+docker build . -t cstrike-server
+```
+
+Run the container:
+
+```
+docker run -d --network host cstrike-server +map de_dust2
+```
+
+**Note that if you don't specify the default map, the server will crash on player connection!**
+
+## Accessing server files
+
+The `cstrike` directory of the dedicated server is exposed as a Docker volume. See the [official documentation](https://docs.docker.com/storage/volumes/) for details on how to work with them.
