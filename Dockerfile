@@ -15,6 +15,10 @@ RUN mkdir -p /opt/hlds && chown -R steam /opt/hlds
 USER steam
 WORKDIR /home/steam
 
+# Update steamcmd and symlink the library directory
+RUN /usr/games/steamcmd +quit && \
+    ln -s ~/.steam/steamcmd/linux32 ~/.steam/sdk32
+
 # Install HLDS
 # (running app_update multiple times to deal with incomplete downloads,
 # as suggested at https://developer.valvesoftware.com/wiki/SteamCMD)
