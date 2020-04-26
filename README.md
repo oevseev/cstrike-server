@@ -31,7 +31,3 @@ docker run -d --network host cstrike-server +map de_dust2
 ```
 
 **Note that if you don't specify the default map, the server will crash on player connection!**
-
-## Accessing server files
-
-The `cstrike` directory of the dedicated server is exposed as a Docker volume. See the [official documentation](https://docs.docker.com/storage/volumes/) for details on how to work with them.

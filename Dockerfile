@@ -51,11 +51,11 @@ RUN cd /opt/hlds/cstrike && \
 # Add the configuration files
 ADD cstrike /opt/hlds/cstrike
 
-# Store the server data on a volume
-VOLUME /opt/hlds/cstrike
-
 # Expose the ports used by HLDS
-EXPOSE 26900/udp 27015 27015/udp 27020/udp
+EXPOSE 26900/udp
+EXPOSE 27015
+EXPOSE 27015/udp
+EXPOSE 27020/udp
 
 # Run the server
 WORKDIR /opt/hlds
