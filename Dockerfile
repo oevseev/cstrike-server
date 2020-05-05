@@ -9,7 +9,7 @@ RUN apt-get update && \
 RUN useradd -m steam
 
 # Create the /opt/hlds directory and make steam its owner
-RUN mkdir -p /opt/hlds && chown -R steam /opt/hlds
+RUN mkdir -p /opt/hlds && chown -R steam:steam /opt/hlds
 
 # Change user to steam
 USER steam
