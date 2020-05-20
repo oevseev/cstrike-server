@@ -49,7 +49,7 @@ RUN cd /opt/hlds/cstrike && \
         | tar -zxvf -
 
 # Add the configuration files
-ADD cstrike /opt/hlds/cstrike
+COPY --chown=steam:steam cstrike /opt/hlds/cstrike
 
 # Expose the ports used by HLDS
 EXPOSE 26900/udp
